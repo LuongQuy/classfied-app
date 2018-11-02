@@ -1,0 +1,44 @@
+<div class="container">
+
+    <div class="col-sm-6 col-sm-offset-3">
+
+        <form action="/thanh-vien/dang-nhap" method="POST" class="form-horizontal" role="form">
+            <div class="form-group">
+                <legend>{{__ 'Member Login'}}
+                    <span class="pull-right">
+                        <a href="/thanh-vien/dang-ky">{{__ 'Create new account'}}</a>
+                    </span>
+                </legend>
+            </div>
+
+            {{#if hasErrors}}
+            <div class="row">
+                <div class="alert alert-danger">
+                    {{#each messages}}
+                    <p>{{this}}</p>
+                    {{/each}}
+                </div>
+            </div>
+            {{/if}}
+
+            <div class="form-group">
+                <label for="email">{{__ 'Email Address'}}</label>
+                <input type="text" name="email" class="form-control" id="email" placeholder="{{__ 'Please input your email address'}}">
+            </div>
+
+            <div class="form-group">
+                <label for="password">{{__ 'Password'}}</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="{{__ 'Please input password'}}">
+            </div>
+
+            <div class="form-group">
+                <div class="checkbox">
+                    <input type="hidden" name="_csrf" value="{{csrfToken}}">
+                    <button id="btnLoginSubmit" type="submit" class="btn btn-primary pull-right">{{__ 'Login'}}</button>     
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
